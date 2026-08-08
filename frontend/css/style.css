@@ -92,3 +92,483 @@ nav button:hover {
     width:500px;
     border-radius:20px;
 }
+/* =========================
+   LOGIN PAGE
+========================= */
+
+.login-container {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #f4f8ff;
+}
+
+.login-box {
+    width: 400px;
+    padding: 40px;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+}
+
+.login-box h1 {
+    text-align: center;
+    font-size: 36px;
+    color: #2563eb;
+    margin-bottom: 10px;
+}
+
+.login-subtitle {
+    text-align: center;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+.login-box form {
+    display: flex;
+    flex-direction: column;
+}
+
+.login-box label {
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.login-box input[type="text"],
+.login-box input[type="email"],
+.login-box input[type="password"] {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 13px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+}
+.login-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+    font-size: 14px;
+}
+
+.login-options label {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin: 0;
+    font-weight: normal;
+}
+
+.login-options input {
+    margin: 0;
+}
+
+.login-options a {
+    color: #2563eb;
+    text-decoration: none;
+}
+
+.login-button {
+    padding: 14px;
+    border: none;
+    border-radius: 8px;
+    background: #2563eb;
+    color: white;
+    font-size: 17px;
+    cursor: pointer;
+}
+
+.login-button:hover {
+    background: #1d4ed8;
+}
+
+.register-link {
+    text-align: center;
+    margin-top: 25px;
+    color: #666;
+}
+
+.register-link a {
+    color: #2563eb;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.back-home {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    color: #555;
+    text-decoration: none;
+}
+/* =========================
+   PATIENT DASHBOARD
+========================= */
+
+.dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 60px;
+    background: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+
+.dashboard-header h2 {
+    color: #2563eb;
+}
+
+.dashboard-header nav {
+    display: flex;
+    gap: 25px;
+}
+
+.dashboard-header nav a {
+    text-decoration: none;
+    color: #333;
+}
+
+.dashboard {
+    padding: 60px;
+    background: #f4f8ff;
+    min-height: calc(100vh - 80px);
+}
+
+.dashboard h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.dashboard-subtitle {
+    color: #666;
+    margin-bottom: 40px;
+}
+
+.dashboard-cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+.dashboard-card {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.dashboard-card h3 {
+    color: #2563eb;
+    margin-bottom: 15px;
+}
+
+.dashboard-card strong {
+    font-size: 28px;
+    color: #111;
+}
+
+.dashboard-card button {
+    margin-top: 15px;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    background: #2563eb;
+    color: white;
+    cursor: pointer;
+}
+/* =========================
+   APPOINTMENT PAGE
+========================= */
+
+.appointment-page {
+    min-height: calc(100vh - 80px);
+    padding: 60px 20px;
+    background: #f4f8ff;
+    display: flex;
+    justify-content: center;
+}
+
+.appointment-box {
+    width: 600px;
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+}
+
+.appointment-box h1 {
+    text-align: center;
+    color: #2563eb;
+    margin-bottom: 10px;
+}
+
+.appointment-subtitle {
+    text-align: center;
+    color: #666;
+    margin-bottom: 35px;
+}
+
+.appointment-box form {
+    display: flex;
+    flex-direction: column;
+}
+
+.appointment-box label {
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.appointment-box input,
+.appointment-box select,
+.appointment-box textarea {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 13px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    font-family: inherit;
+}
+
+.appointment-box textarea {
+    resize: vertical;
+}
+
+.appointment-box button {
+    margin-top: 10px;
+}
+/* =========================
+   LIVE QUEUE
+========================= */
+
+.queue-page {
+    min-height: calc(100vh - 80px);
+    background: #f4f8ff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+}
+
+.queue-box {
+    width: 600px;
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+}
+
+.queue-box h1 {
+    color: #2563eb;
+    margin-bottom: 10px;
+}
+
+.queue-doctor {
+    color: #666;
+    margin-bottom: 30px;
+}
+
+.token-section {
+    background: #f4f8ff;
+    padding: 25px;
+    border-radius: 15px;
+    margin-bottom: 25px;
+}
+
+.token-section p {
+    margin: 0 0 10px;
+    color: #666;
+}
+
+.token-section h2 {
+    font-size: 45px;
+    margin: 0;
+    color: #2563eb;
+}
+
+.queue-info {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.queue-info div {
+    padding: 20px 10px;
+    background: #f8fafc;
+    border-radius: 12px;
+}
+
+.queue-info span {
+    display: block;
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 8px;
+}
+
+.queue-info strong {
+    font-size: 22px;
+}
+
+.doctor-status {
+    margin-bottom: 25px;
+    font-weight: 600;
+}
+
+.status-dot {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background: green;
+    border-radius: 50%;
+    margin-right: 6px;
+}
+/* =========================
+   QR CHECK-IN
+========================= */
+
+.qr-page {
+    min-height: calc(100vh - 80px);
+    background: #f4f8ff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+}
+
+.qr-box {
+    width: 500px;
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+}
+
+.qr-box h1 {
+    color: #2563eb;
+    margin-bottom: 10px;
+}
+
+.qr-subtitle {
+    color: #666;
+    margin-bottom: 25px;
+}
+
+.appointment-summary {
+    background: #f8fafc;
+    padding: 20px;
+    border-radius: 12px;
+    text-align: left;
+    margin-bottom: 25px;
+}
+
+.appointment-summary h3 {
+    margin-top: 0;
+    color: #2563eb;
+}
+
+.appointment-summary p {
+    margin: 8px 0;
+}
+
+#qrcode {
+    display: flex;
+    justify-content: center;
+    margin: 25px 0;
+}
+
+#qrcode img {
+    padding: 10px;
+    background: white;
+    border: 1px solid #ddd;
+}
+
+.scan-message {
+    color: #666;
+    margin-bottom: 25px;
+}
+
+.secondary-button {
+    padding: 12px 20px;
+    border: 1px solid #2563eb;
+    border-radius: 8px;
+    background: white;
+    color: #2563eb;
+    cursor: pointer;
+    font-size: 16px;
+}
+/* =========================
+   DOCTOR DASHBOARD
+========================= */
+
+.doctor-page {
+    min-height: calc(100vh - 80px);
+    background: #f4f8ff;
+    padding: 50px 20px;
+}
+
+.doctor-container {
+    max-width: 900px;
+    margin: auto;
+}
+
+.doctor-container > h1 {
+    margin-bottom: 10px;
+}
+
+.doctor-subtitle {
+    color: #666;
+    margin-bottom: 30px;
+}
+
+.doctor-card,
+.current-patient,
+.waiting-queue {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    margin-bottom: 25px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.07);
+}
+
+.doctor-card h2 {
+    color: #2563eb;
+    margin-bottom: 5px;
+}
+
+.doctor-card p {
+    color: #666;
+}
+
+.current-patient {
+    text-align: center;
+}
+
+.current-token {
+    font-size: 50px;
+    font-weight: bold;
+    color: #2563eb;
+    margin: 20px 0;
+}
+
+.queue-patient {
+    display: flex;
+    justify-content: space-between;
+    padding: 18px;
+    border-bottom: 1px solid #eee;
+}
+
+.queue-patient:last-child {
+    border-bottom: none;
+}
+
+.queue-patient span:first-child {
+    font-weight: bold;
+    color: #2563eb;
+}

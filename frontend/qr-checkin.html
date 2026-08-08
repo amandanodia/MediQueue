@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>QR Check-in - MediQueue</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <header class="dashboard-header">
+
+        <h2>MediQueue</h2>
+
+        <nav>
+            <a href="patient-dashboard.html">Dashboard</a>
+            <a href="queue.html">Live Queue</a>
+        </nav>
+
+    </header>
+
+
+    <main class="qr-page">
+
+        <div class="qr-box">
+
+            <h1>Appointment Check-in</h1>
+
+            <p class="qr-subtitle">
+                Scan this QR code at the hospital reception.
+            </p>
+
+
+            <div class="appointment-summary">
+
+                <h3>Your Appointment</h3>
+
+                <p>
+                    <strong>Doctor:</strong>
+                    Dr. Sharma
+                </p>
+
+                <p>
+                    <strong>Specialization:</strong>
+                    Cardiologist
+                </p>
+
+                <p>
+                    <strong>Token:</strong>
+                    A-24
+                </p>
+
+                <p>
+                    <strong>Time:</strong>
+                    10:00 AM
+                </p>
+
+            </div>
+
+
+            <div id="qrcode"></div>
+
+
+            <p class="scan-message">
+                Show this QR code at the reception desk.
+            </p>
+
+
+            <button
+                class="login-button"
+                onclick="window.location.href='queue.html'">
+
+                View Live Queue
+
+            </button>
+
+
+            <br><br>
+
+
+            <button
+                class="secondary-button"
+                onclick="window.location.href='patient-dashboard.html'">
+
+                Back to Dashboard
+
+            </button>
+
+        </div>
+
+    </main>
+
+
+    <script>
+    const qrElement = document.getElementById("qrcode");
+
+    const qrImage = document.createElement("img");
+
+    qrImage.src =
+        "https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=" +
+        encodeURIComponent("MediQueue | Patient: Aman | Doctor: Dr. Sharma | Token: A-24");
+
+    qrImage.width = 200;
+    qrImage.height = 200;
+
+    qrElement.appendChild(qrImage);
+</script>
+</body>
+
+</html>

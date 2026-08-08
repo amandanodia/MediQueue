@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Book Appointment - MediQueue</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <header class="dashboard-header">
+
+        <h2>MediQueue</h2>
+
+        <nav>
+            <a href="patient-dashboard.html">Dashboard</a>
+            <a href="index.html">Logout</a>
+        </nav>
+
+    </header>
+
+
+    <main class="appointment-page">
+
+        <div class="appointment-box">
+
+            <h1>Book an Appointment</h1>
+
+            <p class="appointment-subtitle">
+                Choose a doctor and schedule your visit.
+            </p>
+
+
+            <form id="appointmentForm">
+
+                <label for="hospital">Select Hospital</label>
+
+                <select id="hospital" required>
+                    <option value="">Choose a hospital</option>
+                    <option value="city-hospital">City Hospital</option>
+                    <option value="apollo">Apollo Hospital</option>
+                    <option value="fortis">Fortis Hospital</option>
+                </select>
+
+
+                <label for="doctor">Select Doctor</label>
+
+                <select id="doctor" required>
+                    <option value="">Choose a doctor</option>
+                    <option value="dr-sharma">Dr. Sharma - Cardiologist</option>
+                    <option value="dr-mehta">Dr. Mehta - General Physician</option>
+                    <option value="dr-singh">Dr. Singh - Orthopedic</option>
+                </select>
+
+
+                <label for="appointmentDate">Select Date</label>
+
+                <input
+                    type="date"
+                    id="appointmentDate"
+                    required
+                >
+
+
+                <label for="appointmentTime">Select Time</label>
+
+                <select id="appointmentTime" required>
+
+                    <option value="">Choose a time</option>
+
+                    <option value="10:00">10:00 AM</option>
+                    <option value="10:30">10:30 AM</option>
+                    <option value="11:00">11:00 AM</option>
+                    <option value="11:30">11:30 AM</option>
+                    <option value="12:00">12:00 PM</option>
+                    <option value="12:30">12:30 PM</option>
+
+                </select>
+
+
+                <label for="reason">Reason for Visit</label>
+
+                <textarea
+                    id="reason"
+                    placeholder="Briefly describe your problem"
+                    rows="4"
+                ></textarea>
+
+
+                <button
+                    type="submit"
+                    class="login-button"
+                >
+                    Book Appointment
+                </button>
+
+            </form>
+
+        </div>
+
+    </main>
+
+
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Patient Dashboard - MediQueue</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <header class="dashboard-header">
+
+        <h2>MediQueue</h2>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="index.html">Logout</a>
+        </nav>
+
+    </header>
+
+
+    <main class="dashboard">
+
+        <h1>Welcome to your Dashboard 👋</h1>
+
+        <p class="dashboard-subtitle">
+            Manage your appointments and track your queue.
+        </p>
+
+
+        <section class="dashboard-cards">
+
+            <div class="dashboard-card">
+
+                <h3>📅 Book Appointment</h3>
+
+                <p>
+                    Find a doctor and book your appointment.
+                </p>
+
+                <button onclick="window.location.href='/appointment.html'">
+    Book Appointment
+</button>
+
+            </div>
+
+
+            <div class="dashboard-card">
+
+                <h3>🎟️ My Token</h3>
+
+                <p>
+                    Your current token:
+                </p>
+
+                <strong>A-24</strong>
+
+            </div>
+
+
+            <div class="dashboard-card">
+
+                <h3>⏳ Live Queue</h3>
+                <button onclick="window.location.href='queue.html'">
+    View Live Queue
+</button>
+
+                <p>
+                    Patients ahead of you:
+                </p>
+
+                <strong>6 Patients</strong>
+
+            </div>
+
+
+            <div class="dashboard-card">
+
+                <h3>🕐 Estimated Wait</h3>
+
+                <p>
+                    Estimated waiting time:
+                </p>
+
+                <strong>30 Minutes</strong>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</body>
+
+</html>

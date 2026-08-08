@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Live Queue - MediQueue</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <header class="dashboard-header">
+
+        <h2>MediQueue</h2>
+
+        <nav>
+            <a href="patient-dashboard.html">Dashboard</a>
+            <a href="index.html">Logout</a>
+        </nav>
+
+    </header>
+
+
+    <main class="queue-page">
+
+        <div class="queue-box">
+
+            <h1>Live Queue Status</h1>
+
+            <p class="queue-doctor">
+                Dr. Sharma - Cardiologist
+            </p>
+
+            <div class="token-section">
+
+                <p>Your Token</p>
+
+                <h2>A-24</h2>
+
+            </div>
+
+
+            <div class="queue-info">
+
+    <div>
+        <span>Current Token</span>
+        <strong id="currentToken">A-18</strong>
+    </div>
+
+    <div>
+        <span>Patients Ahead</span>
+        <strong id="patientsAhead">6</strong>
+    </div>
+
+    <div>
+        <span>Estimated Wait</span>
+        <strong id="estimatedWait">30 min</strong>
+    </div>
+
+</div>
+
+
+            <div class="doctor-status">
+
+    <span class="status-dot" id="patientStatusDot"></span>
+
+    <span id="patientDoctorStatus">
+        Doctor is Available
+    </span>
+
+</div>
+
+
+            <button
+                class="login-button"
+                onclick="window.location.href='patient-dashboard.html'">
+
+                Back to Dashboard
+
+            </button>
+
+        </div>
+
+    </main>
+    <script>
+
+const currentTokenElement =
+    document.getElementById("currentToken");
+
+const patientsAheadElement =
+    document.getElementById("patientsAhead");
+
+const estimatedWaitElement =
+    document.getElementById("estimatedWait");
+
+const yourTokenNumber = 24;
+
+const averageTimePerPatient = 5;
+
+
+function updatePatientQueue() {
+
+    let currentToken =
+        Number(localStorage.getItem("currentToken")) || 18;
+
+    let patientsAhead =
+        yourTokenNumber - currentToken;
+
+    if (patientsAhead < 0) {
+        patientsAhead = 0;
+    }
+
+    let estimatedWait =
+        patientsAhead * averageTimePerPatient;
+
+    currentTokenElement.textContent =
+        "A-" + currentToken;
+
+    patientsAheadElement.textContent =
+        patientsAhead;
+
+    estimatedWaitElement.textContent =
+        estimatedWait + " min";
+}
+
+
+updatePatientQueue();
+
+setInterval(updatePatientQueue, 1000);
+// =========================
+// DOCTOR AVAILABILITY
+// =========================
+
+const patientDoctorStatus =
+    document.getElementById("patientDoctorStatus");
+
+const patientStatusDot =
+    document.getElementById("patientStatusDot");
+
+
+function updateDoctorAvailability() {
+
+    const doctorAvailable =
+        localStorage.getItem("doctorAvailable") !== "false";
+
+
+    if (doctorAvailable) {
+
+        patientDoctorStatus.textContent =
+            "Doctor is Available";
+
+    } else {
+
+        patientDoctorStatus.textContent =
+            "Doctor is Unavailable";
+
+    }
+}
+
+
+updateDoctorAvailability();
+
+setInterval(updateDoctorAvailability, 1000);
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Doctor Dashboard - MediQueue</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <header class="dashboard-header">
+
+        <h2>MediQueue</h2>
+
+        <nav>
+            <a href="patient-dashboard.html">Patient View</a>
+            <a href="index.html">Logout</a>
+        </nav>
+
+    </header>
+
+
+    <main class="doctor-page">
+
+        <div class="doctor-container">
+
+            <h1>Doctor Dashboard 👨‍⚕️</h1>
+
+            <p class="doctor-subtitle">
+                Manage your patients and control the live queue.
+            </p>
+
+
+            <!-- Doctor Information -->
+
+            <div class="doctor-card">
+
+                <h2>Dr. Sharma</h2>
+
+                <p>Cardiologist</p>
+
+               <div class="doctor-status" id="doctorStatus">
+
+    <span class="status-dot"></span>
+
+    <span id="statusText">Available</span>
+
+</div>
+
+<button
+    id="availabilityButton"
+    class="login-button">
+
+    Set Unavailable
+
+</button>
+
+            </div>
+
+
+            <!-- Current Patient -->
+
+            <div class="current-patient">
+
+                <h2>Current Patient</h2>
+
+                <div class="current-token">
+                    A-18
+                </div>
+
+                <p>
+                    Patient: Rahul
+                </p>
+
+                <button
+                    id="nextPatientButton"
+                    class="login-button">
+
+                    Call Next Patient
+
+                </button>
+
+            </div>
+
+
+            <!-- Waiting Queue -->
+
+            <div class="waiting-queue">
+
+                <h2>Waiting Queue</h2>
+
+                <div id="queueList"></div>
+
+                    <div class="queue-patient">
+                        <span>A-19</span>
+                        <span>Patient 1</span>
+                    </div>
+
+                    <div class="queue-patient">
+                        <span>A-20</span>
+                        <span>Patient 2</span>
+                    </div>
+
+                    <div class="queue-patient">
+                        <span>A-21</span>
+                        <span>Patient 3</span>
+                    </div>
+
+                    <div class="queue-patient">
+                        <span>A-22</span>
+                        <span>Patient 4</span>
+                    </div>
+
+                    <div class="queue-patient">
+                        <span>A-23</span>
+                        <span>Patient 5</span>
+                    </div>
+
+                    <div class="queue-patient">
+                        <span>A-24</span>
+                        <span>Aman</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </main>
+    <script>
+
+const button =
+    document.getElementById("nextPatientButton");
+
+const token =
+    document.querySelector(".current-token");
+
+const queueList =
+    document.getElementById("queueList");
+
+
+let currentToken =
+    Number(localStorage.getItem("currentToken")) || 18;
+
+const lastToken = 24;
+
+
+function displayQueue() {
+
+    queueList.innerHTML = "";
+
+    for (
+        let tokenNumber = currentToken + 1;
+        tokenNumber <= lastToken;
+        tokenNumber++
+    ) {
+
+        const patient = document.createElement("div");
+
+        patient.className = "queue-patient";
+
+        patient.innerHTML = `
+            <span>A-${tokenNumber}</span>
+            <span>
+                ${
+                    tokenNumber === 24
+                    ? "Aman"
+                    : "Patient " + (tokenNumber - 18)
+                }
+            </span>
+        `;
+
+        queueList.appendChild(patient);
+    }
+}
+
+
+function updateCurrentPatient() {
+
+    token.textContent =
+        "A-" + currentToken;
+
+    localStorage.setItem(
+        "currentToken",
+        currentToken
+    );
+
+    displayQueue();
+}
+
+
+button.addEventListener("click", function () {
+
+    if (currentToken < lastToken) {
+
+        currentToken++;
+
+        updateCurrentPatient();
+
+        alert(
+            "Now calling patient A-" +
+            currentToken
+        );
+
+    } else {
+
+        alert("No more patients in the queue.");
+
+    }
+
+});
+
+
+updateCurrentPatient();
+
+// =========================
+// DOCTOR AVAILABILITY
+// =========================
+
+const availabilityButton =
+    document.getElementById("availabilityButton");
+
+const statusText =
+    document.getElementById("statusText");
+
+let doctorAvailable =
+    localStorage.getItem("doctorAvailable");
+
+if (doctorAvailable === null) {
+    doctorAvailable = true;
+} else {
+    doctorAvailable = doctorAvailable === "true";
+}
+
+
+function updateDoctorStatus() {
+
+    if (doctorAvailable) {
+
+        statusText.textContent = "Available";
+
+        availabilityButton.textContent =
+            "Set Unavailable";
+
+    } else {
+
+        statusText.textContent = "Unavailable";
+
+        availabilityButton.textContent =
+            "Set Available";
+    }
+}
+
+
+availabilityButton.addEventListener("click", function () {
+
+    doctorAvailable = !doctorAvailable;
+
+    localStorage.setItem(
+        "doctorAvailable",
+        doctorAvailable
+    );
+
+    updateDoctorStatus();
+
+});
+
+
+updateDoctorStatus();
+</script>
+
+</body>
+
+</html>
